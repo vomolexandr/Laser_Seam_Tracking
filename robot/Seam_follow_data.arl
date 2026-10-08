@@ -1,0 +1,2 @@
+const pose p_finish = { x 1022.033, y 110.405, z 351.965, a 179.873, b -0.326, c -179.256, cfg 0, turn 001010b, ej1 -0.000, ej2 0.000, ej3 9.000e+09, ej4 9.000e+09, ej5 9.000e+09, ej6 9.000e+09 }
+speed v1 = { per 5, tcp 25, ori 5, exj 5}

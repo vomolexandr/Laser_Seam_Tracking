@@ -1,0 +1,11 @@
+func void main()
+double a = 1000.000
+move:
+a = a + 10
+pose p1 = { x 900.000, y -251.534, z 1312.385, a 179.999, b 0.244, c -179.812, cfg 0, turn 101011b}
+p1.x = a
+const speed v1 = { per 5, tcp 50, ori 200, exj 5, exl 20}
+print(a)
+lin p:p1,v:v1
+goto move
+endfunc

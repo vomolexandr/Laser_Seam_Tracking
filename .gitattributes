@@ -1,0 +1,8 @@
+*.py text eol=lf
+*.arl text eol=crlf
+*.md text
+*.svg text
+*.gif binary
+*.jpg binary
+*.png binary
+docs/** linguist-documentation

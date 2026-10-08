@@ -1,0 +1,5 @@
+numpy
+opencv-python
+minimalmodbus
+# picamera2 встановлюється через apt: sudo apt install python3-picamera2
+# на Raspberry Pi OS OpenCV можна взяти з apt: sudo apt install python3-opencv

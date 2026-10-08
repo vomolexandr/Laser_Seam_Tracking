@@ -1,0 +1,68 @@
+clock c
+modbus_dev m
+byte redata[8]
+double y_step_mm = 1
+double px_in_mm = 16.4
+double dead_zone_mm = 0.125
+double corection_factor = 0.25
+double camera_x1
+double camera_y1
+double camera_x2
+double camera_y2
+double camera_center
+double camera_reference
+
+pose p_start
+pose p_current
+pose p_correction
+
+func void camera_read()
+read(m, redata, 0, 8)   
+for(int i=0;i<8;i++)
+$I[i]=redata[i]
+endfor
+camera_x1 = $I[1]*256 + $I[0]
+camera_y1 = $I[3]*256 + $I[2] 
+camera_x2 = $I[5]*256 + $I[4]
+camera_y2 = $I[7]*256 + $I[6] 
+camera_center = (camera_x1 +  camera_x2)/2
+print "Camera center = ", camera_center
+//print "X1: ", camera_x1
+//print "Y1: ", camera_y1
+//print "X2: ", camera_x2
+//print "Y2: ", camera_y2
+endfunc
+
+func void correction()
+camera_read()
+p_current = cpose($tool1, WORLD)
+double delta_y = abs(p_current.y - p_finish.y)
+double delta_x = (camera_center - camera_reference)/px_in_mm *corection_factor //deltaX
+//print "delta_x = ", delta_x
+if (abs(delta_x) > dead_zone_mm && delta_x > 0) //при відхил. X
+p_correction.x = p_current.x - (delta_y * delta_x / y_step_mm)
+elseif(abs(delta_x) > dead_zone_mm && delta_x < 0)
+p_correction.x = p_current.x + (delta_y * delta_x / y_step_mm)
+endif
+print "Corection pose X = ", p_correction.x
+clkreset(c)
+endfunc
+
+func void main()
+open(m, "rtserMB0", 1, 9600,8,one,none)
+clearbuff (m)
+waittime 2
+camera_read()
+waittime 1
+camera_read()
+camera_reference = camera_center
+p_start = cpose($tool1, WORLD)
+p_current = p_start
+p_correction = p_finish
+p_correction.x = p_start.x
+interrupt 0, when: clkread(c) >= 0.1, do: correction()
+clkstart(c)
+while (p_current.y >  p_finish.y)
+lin p_correction,v1,$tool1
+endwhile
+endfunc

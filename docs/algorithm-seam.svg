@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="626" height="1931" viewBox="0 0 626 1931" font-family="Arial, Helvetica, sans-serif" font-size="13">
+<defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#000"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="313.0" y="30" text-anchor="middle" font-size="16" font-weight="bold">Розпізнавання стика й передача координат (Raspberry Pi)</text>
+<path d="M181.0,104.0 L181.0,150.0" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,240.0 L181.0,286.0" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,330.0 L181.0,376.0" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,432.0 L181.0,478.0" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,568.0 L181.0,614.0" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,704.0 L181.0,750.0" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,806.0 L181.0,852.0" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,942.0 L181.0,988.0" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,1068.6 L181.0,1114.6" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/><text x="187.0" y="1082.6" font-size="12" font-style="italic">Так</text>
+<path d="M288.9,1028.3 L296.0,1028.3 L296.0,1601.2 L181.0,1601.2 L181.0,1615.2" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/><text x="294.92" y="1022.3" font-size="12" font-style="italic">Ні</text>
+<path d="M181.0,1238.6 L181.0,1284.6" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,1340.6 L181.0,1386.6" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,1467.2 L181.0,1615.2" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/><text x="187.0" y="1481.1999999999998" font-size="12" font-style="italic">Ні</text>
+<path d="M256.0,1426.9 L431.0,1426.9 L431.0,1513.2" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/><text x="262.0" y="1420.8999999999999" font-size="12" font-style="italic">Так</text>
+<path d="M431.0,1569.2 L431.0,1601.2 L181.0,1601.2 L181.0,1615.2" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,1659.2 L181.0,1705.2" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/>
+<path d="M181.0,1775.2 L181.0,1821.2" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/><text x="187.0" y="1789.1999999999998" font-size="12" font-style="italic">Так</text>
+<path d="M85.3,1740.2 L51.4,1740.2 L51.4,264.0 L181.0,264.0 L181.0,286.0" fill="none" stroke="#000" stroke-width="1.3" marker-end="url(#a)"/><text x="55.32000000000001" y="1734.1999999999998" font-size="12" font-style="italic">Ні</text>
+<rect x="111.0" y="60.0" width="140" height="44" rx="22.0" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="86.55" text-anchor="middle">Початок</text>
+<rect x="76.6" y="150.0" width="208.8" height="90" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="174.05" text-anchor="middle">Ініціалізація Modbus RTU</text><text x="181.0" y="191.05" text-anchor="middle">/dev/ttySC0, 9600 8N1,</text><text x="181.0" y="208.05" text-anchor="middle">адреса 1</text><text x="181.0" y="225.05" text-anchor="middle">Запуск камери 2028x1520</text>
+<polygon points="100.0,286.0 290.0,286.0 262.0,330.0 72.0,330.0" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="312.55" text-anchor="middle">Захоплення кадру</text>
+<rect x="86.0" y="376.0" width="190" height="56" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="400.05" text-anchor="middle">Білатеральний фільтр</text><text x="181.0" y="417.05" text-anchor="middle">Перетворення в HSV</text>
+<rect x="86.0" y="478.0" width="190" height="90" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="502.05" text-anchor="middle">Маска inRange:</text><text x="181.0" y="519.05" text-anchor="middle">H 20...120</text><text x="181.0" y="536.05" text-anchor="middle">S 40...255</text><text x="181.0" y="553.05" text-anchor="middle">V 40...255</text>
+<rect x="69.39999999999999" y="614.0" width="223.20000000000002" height="90" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="638.05" text-anchor="middle">Відкриття 3x3,</text><text x="181.0" y="655.05" text-anchor="middle">закриття 3x3</text><text x="181.0" y="672.05" text-anchor="middle">Відкриття 3x300: лишаються</text><text x="181.0" y="689.05" text-anchor="middle">довгі відрізки</text>
+<rect x="86.0" y="750.0" width="190" height="56" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="774.05" text-anchor="middle">Пошук контурів,</text><text x="181.0" y="791.05" text-anchor="middle">сортування за площею</text>
+<rect x="86.0" y="852.0" width="190" height="90" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="876.05" text-anchor="middle">Відбір контурів:</text><text x="181.0" y="893.05" text-anchor="middle">ширина &gt; 200 px,</text><text x="181.0" y="910.05" text-anchor="middle">2 вершини після</text><text x="181.0" y="927.05" text-anchor="middle">апроксимації</text>
+<polygon points="181.0,988.0 288.92,1028.3 181.0,1068.6 73.08,1028.3" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="1024.35" text-anchor="middle">Відібрано</text><text x="181.0" y="1041.35" text-anchor="middle">рівно 2 контури?</text>
+<rect x="83.8" y="1114.6" width="194.4" height="124" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="1138.6499999999999" text-anchor="middle">Упорядкування зліва</text><text x="181.0" y="1155.6499999999999" text-anchor="middle">направо</text><text x="181.0" y="1172.6499999999999" text-anchor="middle">X1: правий край лівого</text><text x="181.0" y="1189.6499999999999" text-anchor="middle">Y1: його середина</text><text x="181.0" y="1206.6499999999999" text-anchor="middle">X2: лівий край правого</text><text x="181.0" y="1223.6499999999999" text-anchor="middle">Y2: його середина</text>
+<polygon points="94.2,1284.6 295.8,1284.6 267.8,1340.6 66.2,1340.6" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="1308.6499999999999" text-anchor="middle">Запис у регістри 0...3:</text><text x="181.0" y="1325.6499999999999" text-anchor="middle">X1, Y1, X2, Y2</text>
+<polygon points="181.0,1386.6 256.0,1426.8999999999999 181.0,1467.1999999999998 106.0,1426.8999999999999" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="1422.9499999999998" text-anchor="middle">Помилка</text><text x="181.0" y="1439.9499999999998" text-anchor="middle">зв'язку?</text>
+<rect x="336.0" y="1513.1999999999998" width="190" height="56" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="431.0" y="1537.2499999999998" text-anchor="middle">Повідомлення</text><text x="431.0" y="1554.2499999999998" text-anchor="middle">в консоль</text>
+<polygon points="94.2,1615.1999999999998 295.8,1615.1999999999998 267.8,1659.1999999999998 66.2,1659.1999999999998" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="1641.7499999999998" text-anchor="middle">Показ кадру з розміткою</text>
+<polygon points="181.0,1705.1999999999998 276.68,1740.1999999999998 181.0,1775.1999999999998 85.32000000000001,1740.1999999999998" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="1744.7499999999998" text-anchor="middle">Натиснуто Esc?</text>
+<rect x="111.0" y="1821.1999999999998" width="140" height="44" rx="22.0" fill="#fff" stroke="#000" stroke-width="1.4"/><text x="181.0" y="1847.7499999999998" text-anchor="middle">Кінець</text>
+</svg>

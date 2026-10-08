@@ -1,0 +1,59 @@
+modbus_dev m
+byte redata[8]
+double y_step_mm = 1
+double px_in_mm = 15
+double dead_zone_mm = 0.125
+double corection_factor = 0.05
+double camera_x1
+double camera_y1
+double camera_x2
+double camera_y2
+double camera_center
+double camera_reference
+
+func void re()
+read(m, redata, 0, 8)   
+for(int i=0;i<8;i++)
+$I[i]=redata[i]
+endfor
+camera_x1 = $I[1]*256 + $I[0]
+camera_y1 = $I[3]*256 + $I[2] 
+camera_x2 = $I[5]*256 + $I[4]
+camera_y2 = $I[7]*256 + $I[6] 
+camera_center = (camera_x1 +  camera_x2)/2
+//print "Camera center = ", camera_center
+//print "X1: ", camera_x1
+//print "Y1: ", camera_y1
+//print "X2: ", camera_x2
+//print "Y2: ", camera_y2
+endfunc
+
+pose p_start
+pose p_current
+pose p_correction
+
+func void main()
+open(m, "rtserMB0", 1, 9600,8,one,none)
+clearbuff (m)
+waittime 2
+re()
+waittime 1
+re()
+camera_reference = camera_center
+p_start = cpose($tool1, $DFWOBJ)
+p_current = p_start
+p_correction = p_start
+while (p_current.y >  p_finish.y)
+re()
+p_current = cpose($tool1, $DFWOBJ)
+p_correction.y = p_current.y - y_step_mm
+if (camera_center < camera_reference - px_in_mm*dead_zone_mm) //при відхил. X
+p_correction.x = p_current.x + (camera_reference - camera_center)/px_in_mm*corection_factor //кор. Х
+elseif(camera_center  > camera_reference + px_in_mm*dead_zone_mm) //при відхил. X
+p_correction.x = p_current.x - (camera_center - camera_reference)/px_in_mm *corection_factor //кор. Х
+endif
+//print "Corection pose X = ", p_correction.x
+lin p_correction,v1,sl:1,$tool1
+
+endwhile
+endfunc
